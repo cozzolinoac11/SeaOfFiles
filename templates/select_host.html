@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Storage-host selection</title>
+    <link rel="icon" type="image/png" href="static\img\logo-no-background.png"/>
+    <style>
+        body {
+            background: #FFFFFF url(static/img/wave.jpg) left top/auto no-repeat content-box fixed;
+            font: normal 15px Verdana, Arial, sans-serif;
+        }
+        .button {
+            background: #3498db;
+            background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+            background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+            background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+            background-image: -o-linear-gradient(top, #3498db, #2980b9);
+            background-image: linear-gradient(to bottom, #3498db, #2980b9);
+            border-radius: 28px;
+            font-family: Courier New;
+            color: #ffffff;
+            font-size: 18px;
+            padding: 10px 20px 10px 20px;
+            border: solid #ffffff 5px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background: #3cb0fd;
+            background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+            text-decoration: none;
+        }
+        input[type=text] {
+            border: 2px solid #ccc;
+            Width: 400px;
+            border-radius: 28px;
+            padding: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        input[type=text]:focus {
+            border-color:#333;
+        }
+        input[type=submit] {
+            background: #3498db;
+            background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+            background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+            background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+            background-image: -o-linear-gradient(top, #3498db, #2980b9);
+            background-image: linear-gradient(to bottom, #3498db, #2980b9);
+            border-radius: 28px;
+            font-family: Courier New;
+            color: #ffffff;
+            font-size: 18px;
+            padding: 10px 20px 10px 20px;
+            border: solid #ffffff 5px;
+            text-decoration: none;
+        }
+        input[type=submit]:hover {
+            background: #3cb0fd;
+            background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<br></br>
+<div class="input-container">
+    <a class="button" href="{{ url_for('index') }}">Home page</a>
+</div>
+<div id="element2">
+    <h1>Storage-host selection</h1>
+    <p></p>
+    <p>The file to be downloaded may be contained in various storage-hosts.</p>
+    <p>Below is the collection of storage-hosts currently connected to SeaOfFiles that contain the file you want to download:</p>
+    <h2>Storage list</h2>
+    <ul>
+        {% for h in containing_host %}
+            <li>{{ h }}</li>
+        {% endfor %}
+    </ul>
+</div>
+    <p></p>
+    <h2>Enter the name of the storage-host from which you want to download the file</h2>
+    <p>Write in the box below the full name of the storage-host (displayed in the list above) from which you want to download the file.</p>
+    <p>If the name entered is incorrect, does not exist or refers to a storage-host that does not contain the chosen file, the host will automatically choose.</p>
+    <div class="input-container">
+        <form action="{{ url_for('get_selected_host') }}" method="POST">
+            <input type="text" id = "selected_host" name="selected_host" placeholder="Write here the name">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <p><img align="right" src="static\img\brand.png" alt="logo"/></p>
+</body>
+</html>

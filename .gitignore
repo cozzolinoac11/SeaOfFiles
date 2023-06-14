@@ -1,0 +1,4 @@
+/flask_configuration.py
+/database_connections/azure_configuration.py
+/database_connections/__pycache__
+__pycache__

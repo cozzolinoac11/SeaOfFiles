@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/7ec11fc0-16f4-4846-8c78-8eedbeaff7c0/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/SeaOfFile",
+    "appService.deploySubpath": "."
+}
