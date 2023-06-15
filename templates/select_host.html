@@ -89,8 +89,9 @@
 </div>
     <p></p>
     <h2>Enter the name of the storage-host from which you want to download the file</h2>
-    <p>Write in the box below the full name of the storage-host (displayed in the list above) from which you want to download the file.</p>
-    <p>If the name entered is incorrect, does not exist or refers to a storage-host that does not contain the chosen file, the host will automatically choose.</p>
+    <p>If you want, you can write in the box below the full name of the storage-host (displayed in the list above) from which you want to download the file.</p>
+    <p>If no host-name is entered, one will automatically be chosen.</p>
+    <p>If the name entered is incorrect, does not exist or refers to a storage-host that does not contain the chosen file, one will automatically be chosen.</p>
     <div class="input-container">
         <form action="{{ url_for('get_selected_host') }}" method="POST">
             <input type="text" id = "selected_host" name="selected_host" placeholder="Write here the name">
